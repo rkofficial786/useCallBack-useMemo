@@ -20,6 +20,9 @@ function App() {
     setItems([...items, "item added"]);
   };
 
+
+  // this way we can also prevent the rerender of api calls while using like this in useCallback
+  // and calling only when certain variable changes 
   const callApi = useCallback(async () => {
     try {
       const res = await fetch("https://fakestoreapi.com/products");
